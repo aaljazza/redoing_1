@@ -1,4 +1,4 @@
-ifrom django.shortcuts import render, redirect
+from django.shortcuts import render, redirect
 from .models import Restaurant, Item, Like
 from .forms import RestaurantForm, SignupForm, SigninForm, ItemForm
 from django.contrib.auth import login, authenticate, logout
