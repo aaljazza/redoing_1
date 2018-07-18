@@ -1,13 +1,19 @@
-{{% extends "base.html" %}
+{% extends "base.html" %}
 {% load crispy_forms_tags %}
 
 {% block title %}{{restaurant.name}}{% endblock title %}
 
 {% block content %}
-	<h1>{{restaurant.name}}</h1>
-	<h2>{{restaurant.description}}</h2>
+<div class="jumbotron sticky-top">
+	<div class="container">
+		<h1 class="display-4">{{restaurant.name}}</h1>
+		<p class="lead">{{restaurant.description}}</p>
+		<h3>Open From: {{restaurant.opening_time}} to {{restaurant.closing_time}}</h3>
+	</div>
+</div>
+
 	<img src="{{restaurant.logo.url}}">
-	<h3>Open From: {{restaurant.opening_time}} to {{restaurant.closing_time}}</h3>
+	<br>
 	<button class="btn btn-lg" onclick="ajax_like()">
 		<span id="likes_count">{{post_like_count}}</span>
 		<span id="heart" class="{% if liked %} text-success {% endif %}">
