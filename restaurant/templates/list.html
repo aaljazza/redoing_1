@@ -8,7 +8,7 @@
 	{% for restaurant in restaurants %}
 	<br>
     <div class="col-md-4">
-        <div class="card my-card shadow-lg">
+        <div class="card my-card shadow-lg p-3 mb-5 bg-white rounded">
           {% if restaurant.logo %}
             <img class="card-img-top" src="{{restaurant.logo.url}}" alt="Hey Noob, look at me...">
           {% endif %}
