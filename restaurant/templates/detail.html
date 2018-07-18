@@ -16,9 +16,7 @@
 	</button>
 	<br>
 	{% for item in items %}
-		<p><b>{{item.name}}</b></p>
-		<p>{{item.description}}</p>
-		<p>{{item.price}}</p>
+		<p><b>{{item.name}}: </b>{{item.description}} - {{item.price}} KD</p>
 	{% endfor %}
 	{% if request.user == restaurant.owner or request.user.is_staff %}
 		<br>
