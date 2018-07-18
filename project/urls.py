@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from restaurant import views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -33,6 +33,8 @@ urlpatterns = [
     path('restaurants/<int:restaurant_id>/item/', views.item_create, name='create-item'),
     path('no-access/', views.no_access, name='no-access'),
     path('ajax_like/<int:restaurant_id>/', views.ajax_like, name="like_button"),
+    path('accounts/', include('allauth.urls')),
+
 ]
 
 urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

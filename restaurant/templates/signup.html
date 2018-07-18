@@ -4,9 +4,17 @@
 {% block title %}Sign Up{% endblock title %}
 
 {% block content %}
+
+
 	<form action="{% url 'signup' %}" method="POST">
 		{% csrf_token %}
 		{{form|crispy}}
 		<input type="Submit" value="Create">
 	</form>
+	<br>
+	<h1><a href="/accounts/github/login/"><button type="button" class="btn btn-outline-dark btn-lg btn-block"><i class="fab fa-github-square fa-lg"> Signup with GitHub</i></button></a></h1>
+	<h1><a href="/accounts/twitter/login/"><button type="button" class="btn btn-outline-primary btn-lg btn-block"><i class="fab fa-twitter-square fa-lg"> Signup with Twitter</i></button></a></h1>
+	<h1><a href="/accounts/google/login/"><button type="button" class="btn btn-outline-danger btn-lg btn-block"><i class="fab fa-google fa-lg"> Signup with Google</i></button></a></h1>
+
+	
 {% endblock content %}
