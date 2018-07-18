@@ -1,0 +1,14 @@
+
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Update {{restaurant.name}}{% endblock title %}
+
+
+{% block content %}
+	<form class = "container" action="{% url 'update' restaurant_id=restaurant.id %}" method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{form|crispy}}
+		<input type="Submit" value="Update">
+	</form>
+{% endblock content %}
