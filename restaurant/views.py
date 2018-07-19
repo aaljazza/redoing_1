@@ -4,7 +4,25 @@ from .forms import RestaurantForm, SignupForm, SigninForm, ItemForm
 from django.contrib.auth import login, authenticate, logout
 from django.db.models import Q
 from django.http import JsonResponse
+import requests
+#from nytimesarticle import articleAPI
 
+
+def news(request):
+
+#	response = requests.get("https://api.github.com/events")
+#	owner = requests.GET.get('owner')
+#	repo = request.GET.get('repo')
+	#response = requests.get("https://api.github.com/users/JOINCODED/events")
+	#api = articleAPI('44e71851bcd94b3d812dce4b09b20199')
+	response = requests.get("https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=09f6b9840153479ab29b939814ca7a05")
+	#print (response.json())
+	#pass
+	context = {
+	"response": response.json()
+	}
+	#return JsonResponse(response.json(), safe=False)
+	return render(request, 'news.html', context)
 
 # Create your views here.
 

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+	<div class="input-group mb-3">
+	  <input type="text" class="form-control" placeholder="Owner" aria-label="Recipient's username" aria-describedby="button-addon2">
+	  <div class="input-group-append">
+	    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+	  </div>
+	</div>
+
+{% for news in response.articles %}
+    <div class="col-md-4">
+        <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+            <img class="card-img-top" src="{{news.urlToImage}}" alt="">
+          <div class="card-body">
+          	<a href="{{news.url}}"><h3>{{news.title}}</h3></a>
+            <h5 class="card-title">{{news.description}}</h5>
+            <p class="card-text">{{news.author}}</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item text-center">
+                View
+            </li>
+          </ul>
+        </div>
+    </div>
+{% endfor %}
+
+
+
+
+
+</div>
+
+{% endblock %}

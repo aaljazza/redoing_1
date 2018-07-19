@@ -34,6 +34,7 @@ urlpatterns = [
     path('no-access/', views.no_access, name='no-access'),
     path('ajax_like/<int:restaurant_id>/', views.ajax_like, name="like_button"),
     path('accounts/', include('allauth.urls')),
+    path('news/', views.news, name='news'),
 
 ]
 
